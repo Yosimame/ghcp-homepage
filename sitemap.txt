@@ -1,1 +1,3 @@
-https://yosimame.github.io/ghcp-homepage/
+User-agent: *
+Allow: /
+Sitemap: https://yosimame.github.io/ghcp-homepage/sitemap.xml
