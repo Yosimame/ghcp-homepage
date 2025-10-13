@@ -6,7 +6,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>GHCP｜DX・PM/PMO・BPO×テクノロジー支援</title>
   <meta name="description" content="GHCPはPM/PMO・BPO×テクノロジーで成果に直結する実行支援を提供します。">
-  <link rel="icon" href="./assets/img/ghcp-logo.svg">
+
+  <!-- ▼ ロゴ差し替え：SVGシンボル＆ワードマーク -->
+  <!-- 置き場所例：/assets/img/ghcp_logo_symbol.svg, /assets/img/ghcp_logo_wordmark.svg -->
+  <link rel="icon" href="./assets/img/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="./assets/img/ghcp_logo_symbol.svg">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
+
   <link rel="stylesheet" href="./assets/css/style.css">
 
   <!-- ▼（任意）GA4：測定IDを差し替えて使用 -->
@@ -22,12 +28,33 @@
 
   <!-- ▼（任意）HubSpotトラッキング：ポータルIDに差し替えて使用 -->
   <!-- <script id="hs-script-loader" async defer src="//js.hs-scripts.com/XXXXXXX.js"></script> -->
+
+  <!-- ▼（任意）Webでワードマークをフォント表示したい場合（Montserrat） -->
+  <!--
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+  -->
+  <style>
+    /* 最低限の見た目調整（既存CSSに任せられる場合は不要） */
+    .site-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+    .brand .symbol{width:40px;height:auto;display:block}
+    .brand .wordmark{height:28px;width:auto;display:block}
+    .site-nav a{margin-left:16px}
+    .logo-stack{display:flex;align-items:center;gap:10px}
+    /* ヒーロー部のロゴ表示例（任意） */
+    .hero-logo{display:flex;align-items:center;gap:12px;justify-content:center;margin:24px 0}
+    .hero-logo .symbol{width:56px}
+    .hero-logo .wordmark{height:34px}
+  </style>
 </head>
 <body>
   <header class="site-header">
-    <a href="./" class="brand">
-      <img src="./assets/img/ghcp-logo.svg" alt="GHCP" class="logo">
+    <!-- ▼ ロゴ差し替え：シンボル＋ワードマークを別ファイルで表示 -->
+    <a href="./" class="brand" aria-label="GHCP ホームへ">
+      <img src="./assets/img/ghcp_logo_symbol.svg" alt="GHCPシンボル" class="symbol" loading="eager" decoding="async">
+      <img src="./assets/img/ghcp_logo_wordmark.svg" alt="GHCP" class="wordmark" loading="eager" decoding="async">
     </a>
+
     <nav class="site-nav" aria-label="主要ナビゲーション">
       <a href="./services.html">サービス</a>
       <a href="./works.html">実績</a>
@@ -39,6 +66,12 @@
 
   <main>
     <section class="hero">
+      <!-- （任意）ヒーローにもロゴを表示したい場合 -->
+      <div class="hero-logo" aria-hidden="true">
+        <img src="./assets/img/ghcp_logo_symbol.svg" alt="" class="symbol" decoding="async">
+        <img src="./assets/img/ghcp_logo_wordmark.svg" alt="" class="wordmark" decoding="async">
+      </div>
+
       <h1>“実行まで並走する” PM/PMO × BPO × テクノロジー</h1>
       <p class="lead">
         現場に強いPM/PMOとBPO運用、そしてテクノロジー実装で、構想からローンチ・定着までを伴走支援します。
