@@ -4,11 +4,9 @@
   <meta charset="utf-8">
   <meta name="google-site-verification" content="SMYuCoVLMp6KZehBXd9IYvrzCh_LbS0d1yFfwQEllLc" />
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>GHCP｜DX・PM/PMO・BPO×テクノロジー支援</title>｜TEST
+  <title>GHCP｜DX・PM/PMO・BPO×テクノロジー支援</title>
   <meta name="description" content="GHCPはPM/PMO・BPO×テクノロジーで成果に直結する実行支援を提供します。">
 
-  <!-- ▼ ロゴ差し替え：SVGシンボル＆ワードマーク -->
-  <!-- 置き場所例：/assets/img/ghcp_logo_symbol.svg, /assets/img/ghcp_logo_wordmark.svg -->
   <link rel="icon" href="./assets/img/favicon.ico">
   <link rel="icon" type="image/svg+xml" href="./assets/img/ghcp_logo_symbol.svg">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
@@ -33,23 +31,10 @@
   <!--
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   -->
-  <style>
-    /* 最低限の見た目調整（既存CSSに任せられる場合は不要） */
-    .site-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px}
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-    .brand .symbol{width:40px;height:auto;display:block}
-    .brand .wordmark{height:28px;width:auto;display:block}
-    .site-nav a{margin-left:16px}
-    .logo-stack{display:flex;align-items:center;gap:10px}
-    /* ヒーロー部のロゴ表示例（任意） */
-    .hero-logo{display:flex;align-items:center;gap:12px;justify-content:center;margin:24px 0}
-    .hero-logo .symbol{width:56px}
-    .hero-logo .wordmark{height:34px}
-  </style>
 </head>
+
 <body>
   <header class="site-header">
-    <!-- ▼ ロゴ差し替え：シンボル＋ワードマークを別ファイルで表示 -->
     <a href="./" class="brand" aria-label="GHCP ホームへ">
       <img src="./assets/img/ghcp_logo_symbol.svg" alt="GHCPシンボル" class="symbol" loading="eager" decoding="async">
       <img src="./assets/img/ghcp_logo_wordmark.svg" alt="GHCP" class="wordmark" loading="eager" decoding="async">
@@ -60,13 +45,12 @@
       <a href="./works.html">実績</a>
       <a href="./about.html">特徴</a>
       <a href="./company.html">会社概要</a>
-      <a class="cta" href="./contact.html" rel="noopener">お問い合わせ</a>
+      <a class="cta" href="./contact.html">お問い合わせ</a>
     </nav>
   </header>
 
   <main>
     <section class="hero">
-      <!-- （任意）ヒーローにもロゴを表示したい場合 -->
       <div class="hero-logo" aria-hidden="true">
         <img src="./assets/img/ghcp_logo_symbol.svg" alt="" class="symbol" decoding="async">
         <img src="./assets/img/ghcp_logo_wordmark.svg" alt="" class="wordmark" decoding="async">
@@ -108,11 +92,8 @@
 
   <footer class="site-footer">
     <small>© GHCP</small>
-    <span class="sep">|</span>
+    <span class="sep" aria-hidden="true">|</span>
     <a href="./privacy.html">プライバシーポリシー</a>
-    <!-- ▼（任意）サイトマップ/robots 置き場所の例
-      /sitemap.xml  /robots.txt をルートに配置
-    -->
   </footer>
 </body>
 </html>
