@@ -1,9 +1,108 @@
-:root{--fg:#111;--bg:#fff;--brand:#0ea5a6}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.6}
-.site-header{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff}
-.logo{height:28px}nav a{margin:0 10px;text-decoration:none;color:#333}
-nav a.cta{padding:.45rem .8rem;border:1px solid var(--brand);border-radius:8px}
-.hero{padding:64px 20px;max-width:980px;margin:0 auto}
-.hero h1{font-size:clamp(24px,3.6vw,40px);margin:0 0 10px}
-.btn{display:inline-block;background:var(--brand);color:#fff;padding:.7rem 1rem;border-radius:10px;text-decoration:none}
-.site-footer{padding:24px 20px;border-top:1px solid #eee;text-align:center;margin-top:48px}
+:root{
+  --fg:#111;
+  --bg:#fff;
+  --brand:#0ea5a6;
+  --border:#eee;
+  --container:980px;
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--fg);
+  background:var(--bg);
+  line-height:1.6;
+}
+
+/* Header */
+.site-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 20px;
+  border-bottom:1px solid var(--border);
+  position:sticky;
+  top:0;
+  background:#fff;
+  z-index:10;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+}
+
+.brand .symbol{
+  width:40px;
+  height:auto;
+  display:block;
+}
+
+.brand .wordmark{
+  height:28px;
+  width:auto;
+  display:block;
+}
+
+/* Nav（他のnavに影響させない） */
+.site-nav a{
+  margin:0 10px;
+  text-decoration:none;
+  color:#333;
+}
+
+.site-nav a.cta{
+  padding:.45rem .8rem;
+  border:1px solid var(--brand);
+  border-radius:8px;
+}
+
+/* Hero */
+.hero{
+  padding:64px 20px;
+  max-width:var(--container);
+  margin:0 auto;
+}
+
+.hero h1{
+  font-size:clamp(24px,3.6vw,40px);
+  margin:0 0 10px;
+}
+
+/* Top hero logo（任意：使っているなら残す） */
+.hero-logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  justify-content:center;
+  margin:24px 0;
+}
+.hero-logo .symbol{width:56px}
+.hero-logo .wordmark{height:34px}
+
+/* Button */
+.btn{
+  display:inline-block;
+  background:var(--brand);
+  color:#fff;
+  padding:.7rem 1rem;
+  border-radius:10px;
+  text-decoration:none;
+}
+
+/* Footer */
+.site-footer{
+  padding:24px 20px;
+  border-top:1px solid var(--border);
+  text-align:center;
+  margin-top:48px;
+}
+
+.site-footer .sep{
+  margin:0 8px;
+  color:#999;
+}
