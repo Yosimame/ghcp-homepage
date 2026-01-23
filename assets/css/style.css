@@ -10,23 +10,39 @@
 
 body{
   margin:0;
-  font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
+  font-family:system-ui, Segoe UI, Roboto, Arial, sans-serif;
   color:var(--fg);
   background:var(--bg);
   line-height:1.6;
 }
 
-/* Header */
+/* =====================
+   Header
+===================== */
 .site-header{
   display:flex;
   align-items:center;
   justify-content:space-between;
   padding:12px 20px;
-  border-bottom:1px solid var(--border);
+
   position:sticky;
   top:0;
-  background:#fff;
   z-index:10;
+
+  background:#fff;
+  border-bottom:1px solid var(--border);
+}
+
+/* ヒーロー上では透明ヘッダー */
+.site-header.is-overlay{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+
+  background:transparent;
+  border-bottom:none;
+  z-index:1000;
 }
 
 .brand{
@@ -48,7 +64,7 @@ body{
   display:block;
 }
 
-/* Nav（他のnavに影響させない） */
+/* ナビ */
 .site-nav a{
   margin:0 10px;
   text-decoration:none;
@@ -61,9 +77,30 @@ body{
   border-radius:8px;
 }
 
-/* =========
-   Hero（通常版：動画じゃないヒーロー用）
-   ========= */
+/* ヒーロー上のナビ配色 */
+.site-header.is-overlay .site-nav a{
+  color:rgba(255,255,255,.9);
+}
+
+.site-header.is-overlay .site-nav a.cta{
+  color:#fff;
+  border-color:rgba(255,255,255,.8);
+  background:rgba(0,0,0,.15);
+  backdrop-filter: blur(6px);
+}
+
+.site-header.is-overlay .brand img{
+  filter: drop-shadow(0 8px 18px rgba(0,0,0,.35));
+}
+
+/* ヘッダー分の逃げ */
+main{
+  padding-top:56px;
+}
+
+/* =====================
+   Hero（通常）
+===================== */
 .hero{
   padding:64px 20px;
   max-width:var(--container);
@@ -72,10 +109,14 @@ body{
 
 .hero h1{
   font-size:clamp(24px,3.6vw,40px);
-  margin:0 0 10px;
+  margin:0 0 12px;
 }
 
-/* Top hero logo（共通で使うので残す） */
+.lead{
+  font-size:1rem;
+}
+
+/* ロゴ（共通） */
 .hero-logo{
   display:flex;
   align-items:center;
@@ -83,10 +124,13 @@ body{
   justify-content:center;
   margin:24px 0;
 }
+
 .hero-logo .symbol{width:56px}
 .hero-logo .wordmark{height:34px}
 
-/* Button */
+/* =====================
+   Button
+===================== */
 .btn{
   display:inline-block;
   background:var(--brand);
@@ -96,7 +140,9 @@ body{
   text-decoration:none;
 }
 
-/* Footer */
+/* =====================
+   Footer
+===================== */
 .site-footer{
   padding:24px 20px;
   border-top:1px solid var(--border);
@@ -109,23 +155,22 @@ body{
   color:#999;
 }
 
-/* =========
-   Hero Video（動画版：.hero.hero-video-wrap の時だけ上書き）
-   ========= */
+/* =====================
+   Hero Video（動画ヒーロー）
+===================== */
 
-/* ここが “競合回避の肝”：
-   動画ヒーローの時は .hero の max-width/padding を無効化して全画面にする */
+/* 競合回避の肝：通常.heroを無効化 */
 .hero.hero-video-wrap{
   max-width:none;
   margin:0;
   padding:0;
 
   position:relative;
-  min-height:calc(100vh - 56px); /* ヘッダーがstickyなので少し引く（微調整） */
+  min-height:calc(100vh - 56px);
   overflow:hidden;
 }
 
-/* 背景動画レイヤー */
+/* 背景動画 */
 .hero-media{
   position:absolute;
   inset:0;
@@ -138,18 +183,18 @@ body{
   object-fit:cover;
 }
 
-/* 文字が見えるように暗幕 */
+/* 暗幕 */
 .hero-overlay{
   position:absolute;
   inset:0;
   background:linear-gradient(
     to bottom,
-    rgba(0,0,0,0.35),
-    rgba(0,0,0,0.75)
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.75)
   );
 }
 
-/* 文字・ロゴレイヤー */
+/* 中身 */
 .hero-inner{
   position:relative;
   z-index:1;
@@ -161,29 +206,56 @@ body{
   align-items:center;
   text-align:center;
 
-  padding:64px 20px;     /* 文字側の余白はこっちで付ける */
+  padding:64px 20px;
   width:min(var(--container), 92%);
   margin:0 auto;
 }
 
-/* 動画ヒーロー内の文字色を白寄りに */
-.hero.hero-video-wrap h1,
-.hero.hero-video-wrap .lead{
+/* ===== ここが今回の主役 ===== */
+/* 動画ヒーローだけ文字を大きくする */
+.hero.hero-video-wrap h1{
+  font-size:clamp(30px,4.8vw,64px);
+  line-height:1.25;
   color:#fff;
 }
 
 .hero.hero-video-wrap .lead{
-  max-width: 70ch;
+  color:#fff;
+  max-width:70ch;
   opacity:.95;
 }
 
-/* ボタンを動画上で見やすく */
 .hero.hero-video-wrap .btn{
-  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
 }
 
-/* （任意）モバイルでヘッダーが詰まる場合の保険 */
-@media (max-width: 880px){
+/* =====================
+   Responsive
+===================== */
+@media (max-width:880px){
   .site-nav{display:none;}
   .hero-inner{padding:56px 16px;}
+}
+/* =====================
+   Hero title を1行固定にする
+===================== */
+
+/* 動画ヒーローのタイトルを1行に */
+.hero.hero-video-wrap h1{
+  white-space: nowrap;        /* ← 折り返し禁止 */
+  overflow: hidden;           /* はみ出し防止 */
+  text-overflow: ellipsis;    /* 念のため */
+}
+
+/* 画面が狭い時だけ少しサイズを落とす（保険） */
+@media (max-width: 1024px){
+  .hero.hero-video-wrap h1{
+    font-size: clamp(24px, 4vw, 48px);
+  }
+}
+
+@media (max-width: 768px){
+  .hero.hero-video-wrap h1{
+    white-space: normal;
+  }
 }
