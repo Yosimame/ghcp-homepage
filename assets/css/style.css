@@ -159,7 +159,7 @@ main{
    Hero Video（動画ヒーロー）
 ===================== */
 
-/* 競合回避の肝：通常.heroを無効化 */
+/* 通常.heroの制約を解除して全画面化 */
 .hero.hero-video-wrap{
   max-width:none;
   margin:0;
@@ -211,18 +211,34 @@ main{
   margin:0 auto;
 }
 
-/* ===== ここが今回の主役 ===== */
-/* 動画ヒーローだけ文字を大きくする */
+/* =====================
+   動画ヒーロー文字（主役）
+===================== */
+
+/* タイトル：大きく・1行 */
 .hero.hero-video-wrap h1{
   font-size:clamp(30px,4.8vw,64px);
   line-height:1.25;
   color:#fff;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
+/* リード文：少し大きく・1行 */
 .hero.hero-video-wrap .lead{
+  font-size:clamp(16px,1.6vw,20px);
+  line-height:1.6;
   color:#fff;
-  max-width:70ch;
   opacity:.95;
+
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+
+  max-width:90ch;
+  margin-top:12px;
 }
 
 .hero.hero-video-wrap .btn{
@@ -230,32 +246,51 @@ main{
 }
 
 /* =====================
-   Responsive
+   Responsive（可読性優先）
 ===================== */
-@media (max-width:880px){
-  .site-nav{display:none;}
-  .hero-inner{padding:56px 16px;}
-}
-/* =====================
-   Hero title を1行固定にする
-===================== */
-
-/* 動画ヒーローのタイトルを1行に */
-.hero.hero-video-wrap h1{
-  white-space: nowrap;        /* ← 折り返し禁止 */
-  overflow: hidden;           /* はみ出し防止 */
-  text-overflow: ellipsis;    /* 念のため */
-}
-
-/* 画面が狭い時だけ少しサイズを落とす（保険） */
-@media (max-width: 1024px){
+@media (max-width:1024px){
   .hero.hero-video-wrap h1{
-    font-size: clamp(24px, 4vw, 48px);
+    font-size:clamp(26px,4vw,48px);
+  }
+  .hero.hero-video-wrap .lead{
+    font-size:clamp(15px,2.6vw,18px);
   }
 }
 
+@media (max-width:768px){
+  .site-nav{display:none;}
+  .hero-inner{padding:56px 16px;}
+
+  /* スマホでは折り返しOKに戻す */
+  .hero.hero-video-wrap h1,
+  .hero.hero-video-wrap .lead{
+    white-space:normal;
+  }
+}
+/* =====================
+   スマホでも必ず1行（縮小で対応）
+===================== */
 @media (max-width: 768px){
+  /* スマホでも折り返し禁止 */
+  .hero.hero-video-wrap h1,
+  .hero.hero-video-wrap .lead{
+    white-space: nowrap !important;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* タイトル：スマホ用にさらに小さく（1行維持） */
   .hero.hero-video-wrap h1{
-    white-space: normal;
+    font-size: clamp(18px, 4.6vw, 26px) !important;
+    line-height: 1.15;
+    letter-spacing: 0.02em;
+  }
+
+  /* リード：スマホ用に小さく（1行維持） */
+  .hero.hero-video-wrap .lead{
+    font-size: clamp(12px, 2.9vw, 15px) !important;
+    line-height: 1.4;
+    max-width: 92vw; /* 画面いっぱいまで使う */
+    margin-top: 10px;
   }
 }
