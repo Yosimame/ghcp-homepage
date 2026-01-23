@@ -50,20 +50,42 @@
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero-logo" aria-hidden="true">
-        <img src="./assets/img/ghcp_logo_symbol.svg" alt="" class="symbol" decoding="async">
-        <img src="./assets/img/ghcp_logo_wordmark.svg" alt="" class="wordmark" decoding="async">
-      </div>
+    <section class="hero hero-video-wrap">
+  <!-- ▼ 背景動画（assets/video/digital2-hero.mp4 を表示） -->
+  <div class="hero-media" aria-hidden="true">
+    <video
+      class="hero-video"
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+    >
+      <source src="./assets/video/digital2-hero.mp4" type="video/mp4">
+    </video>
+    <div class="hero-overlay"></div>
+  </div>
 
-      <h1>“実行まで並走する” PM/PMO × BPO × テクノロジー</h1>
-      <p class="lead">
-        現場に強いPM/PMOとBPO運用、そしてテクノロジー実装で、構想からローンチ・定着までを伴走支援します。
-      </p>
-      <p>
-        <a class="btn" href="./contact.html">30分相談（無料）</a>
-      </p>
-    </section>
+  <!-- ▼ ヒーローの中身（ロゴ＋文字＋ボタン） -->
+  <div class="hero-inner">
+    <div class="hero-logo" aria-hidden="true">
+      <img src="./assets/img/ghcp_logo_symbol.svg" alt="" class="symbol" decoding="async">
+      <img src="./assets/img/ghcp_logo_wordmark.svg" alt="" class="wordmark" decoding="async">
+    </div>
+
+    <h1>“実行まで並走する” PM/PMO × BPO × テクノロジー</h1>
+
+    <p class="lead">
+      現場に強いPM/PMOとBPO運用、そしてテクノロジー実装で、<br>
+      構想からローンチ・定着までを伴走支援します。
+    </p>
+
+    <p>
+      <a class="btn" href="./contact.html">30分相談（無料）</a>
+    </p>
+  </div>
+</section>
+
 
     <section class="features">
       <h2>GHCPの強み</h2>

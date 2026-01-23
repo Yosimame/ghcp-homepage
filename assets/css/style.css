@@ -61,7 +61,9 @@ body{
   border-radius:8px;
 }
 
-/* Hero */
+/* =========
+   Hero（通常版：動画じゃないヒーロー用）
+   ========= */
 .hero{
   padding:64px 20px;
   max-width:var(--container);
@@ -73,7 +75,7 @@ body{
   margin:0 0 10px;
 }
 
-/* Top hero logo（任意：使っているなら残す） */
+/* Top hero logo（共通で使うので残す） */
 .hero-logo{
   display:flex;
   align-items:center;
@@ -105,4 +107,83 @@ body{
 .site-footer .sep{
   margin:0 8px;
   color:#999;
+}
+
+/* =========
+   Hero Video（動画版：.hero.hero-video-wrap の時だけ上書き）
+   ========= */
+
+/* ここが “競合回避の肝”：
+   動画ヒーローの時は .hero の max-width/padding を無効化して全画面にする */
+.hero.hero-video-wrap{
+  max-width:none;
+  margin:0;
+  padding:0;
+
+  position:relative;
+  min-height:calc(100vh - 56px); /* ヘッダーがstickyなので少し引く（微調整） */
+  overflow:hidden;
+}
+
+/* 背景動画レイヤー */
+.hero-media{
+  position:absolute;
+  inset:0;
+  z-index:0;
+}
+
+.hero-video{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* 文字が見えるように暗幕 */
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35),
+    rgba(0,0,0,0.75)
+  );
+}
+
+/* 文字・ロゴレイヤー */
+.hero-inner{
+  position:relative;
+  z-index:1;
+
+  min-height:calc(100vh - 56px);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+
+  padding:64px 20px;     /* 文字側の余白はこっちで付ける */
+  width:min(var(--container), 92%);
+  margin:0 auto;
+}
+
+/* 動画ヒーロー内の文字色を白寄りに */
+.hero.hero-video-wrap h1,
+.hero.hero-video-wrap .lead{
+  color:#fff;
+}
+
+.hero.hero-video-wrap .lead{
+  max-width: 70ch;
+  opacity:.95;
+}
+
+/* ボタンを動画上で見やすく */
+.hero.hero-video-wrap .btn{
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+/* （任意）モバイルでヘッダーが詰まる場合の保険 */
+@media (max-width: 880px){
+  .site-nav{display:none;}
+  .hero-inner{padding:56px 16px;}
 }
