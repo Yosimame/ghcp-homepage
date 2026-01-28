@@ -12,32 +12,21 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/apple-touch-icon.png">
 
   <link rel="stylesheet" href="./assets/css/style.css">
-
-  <!-- ▼（任意）GA4：測定IDを差し替えて使用 -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
-
-  <!-- ▼（任意）HubSpotトラッキング：ポータルIDに差し替えて使用 -->
-  <!-- <script id="hs-script-loader" async defer src="//js.hs-scripts.com/XXXXXXX.js"></script> -->
-
-  <!-- ▼（任意）Webでワードマークをフォント表示したい場合（Montserrat） -->
-  <!--
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
-  -->
 </head>
 
 <body>
   <header class="site-header" id="siteHeader">
     <a href="./" class="brand" aria-label="GHCP ホームへ">
-      <img src="./assets/img/ghcp_logo_symbol.svg" alt="GHCPシンボル" class="symbol" loading="eager" decoding="async">
-      <img src="./assets/img/ghcp_logo_wordmark.svg" alt="GHCP" class="wordmark" loading="eager" decoding="async">
+      <img src="./assets/img/ghcp_logo_symbol.svg"
+           alt="GHCPシンボル"
+           class="symbol"
+           loading="eager"
+           decoding="async">
+      <img src="./assets/img/ghcp_logo_wordmark.svg"
+           alt="GHCP"
+           class="wordmark"
+           loading="eager"
+           decoding="async">
     </a>
 
     <nav class="site-nav" aria-label="主要ナビゲーション">
@@ -52,7 +41,7 @@
   <main>
     <!-- Hero (Video) -->
     <section class="hero hero-video-wrap" id="hero">
-      <!-- ▼ 背景動画 -->
+      <!-- 背景動画 -->
       <div class="hero-media" aria-hidden="true">
         <video
           class="hero-video"
@@ -67,13 +56,8 @@
         <div class="hero-overlay"></div>
       </div>
 
-      <!-- ▼ ヒーローの中身（ロゴ＋文字＋ボタン） -->
+      <!-- ヒーローの中身（ロゴ削除済み） -->
       <div class="hero-inner">
-        <div class="hero-logo" aria-hidden="true">
-          <img src="./assets/img/ghcp_logo_symbol.svg" alt="" class="symbol" decoding="async">
-          <img src="./assets/img/ghcp_logo_wordmark.svg" alt="" class="wordmark" decoding="async">
-        </div>
-
         <h1>“実行まで並走する” PM/PMO × BPO × テクノロジー</h1>
 
         <p class="lead">
@@ -131,10 +115,8 @@
         header.classList.toggle('is-solid', !on);
       };
 
-      // 初期状態：ヒーロー上は overlay
       setOverlay(true);
 
-      // ヒーローが画面内にある間は overlay、外れたら solid
       const io = new IntersectionObserver(
         ([entry]) => setOverlay(entry.isIntersecting),
         { root: null, threshold: 0.1 }

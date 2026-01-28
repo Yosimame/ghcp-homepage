@@ -1,7 +1,7 @@
 :root{
   --fg:#111;
   --bg:#fff;
-  --brand:#0ea5a6;
+  --brand:#004B53;
   --border:#eee;
   --container:980px;
   --header-h:56px;
@@ -59,39 +59,40 @@ body{
 .brand .symbol{width:40px;height:auto;display:block}
 .brand .wordmark{height:28px;width:auto;display:block}
 
-/* Nav（デフォルト＝白化後） */
+/* Nav（デフォルト） */
 .site-nav a{
   margin:0 10px;
   text-decoration:none;
-  color:#333;
+  color:#004B53; /* ← 指定：通常リンク */
   transition: opacity .2s ease, transform .2s ease;
 }
 .site-nav a:hover{opacity:.85}
 
-/* CTA（デフォルト＝白化後） */
+/* CTA（問い合わせボタン：.btnと同等の見た目） */
 .site-nav a.cta{
-  padding:.45rem .8rem;
-  border:1px solid var(--brand);
-  border-radius:10px;
-  color:#0b2b2b;
-  background:transparent;
-  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+  display:inline-block;
+  background:#004B53;      /* ← 指定：背景 */
+  color:#fff;              /* ← 指定：白文字 */
+  padding:.8rem 1.2rem;
+  border-radius:12px;
+  border:none;
+  text-decoration:none;
+  transition: transform .2s ease, box-shadow .2s ease, filter .2s ease;
 }
 .site-nav a.cta:hover{
-  background:rgba(14,165,166,.10);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow:0 14px 34px rgba(0,0,0,.25);
+  filter: brightness(1.03);
 }
 
-/* overlay時（ヒーロー上） */
+/* overlay時（ヒーロー上）も同じ色に固定 */
 .site-header.is-overlay .site-nav a{
-  color:rgba(255,255,255,.92);
+  color:#004B53; /* ← 指定：リンクも同色 */
 }
 .site-header.is-overlay .site-nav a.cta{
-  color:#fff;
-  border-color:rgba(255,255,255,.85);
-  background:rgba(0,0,0,.16);
-  backdrop-filter: blur(6px);
-  box-shadow:0 10px 24px rgba(0,0,0,.18);
+  color:#fff;     /* ← 指定：CTAは白文字 */
+  background:#004B53;
+  box-shadow:0 14px 34px rgba(0,0,0,.25);
 }
 .site-header.is-overlay .brand img{
   filter: drop-shadow(0 8px 18px rgba(0,0,0,.35));
@@ -201,7 +202,7 @@ main{ padding-top:var(--header-h); }
   filter: brightness(1.03);
 }
 .btn:focus-visible{
-  outline:2px solid rgba(14,165,166,.65);
+  outline:2px solid rgba(0,75,83,.65);
   outline-offset:3px;
 }
 
