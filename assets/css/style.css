@@ -63,7 +63,7 @@ body{
 .site-nav a{
   margin:0 10px;
   text-decoration:none;
-  color:#004B53; /* ← 指定：通常リンク */
+  color:#004B53;
   transition: opacity .2s ease, transform .2s ease;
 }
 .site-nav a:hover{opacity:.85}
@@ -71,8 +71,8 @@ body{
 /* CTA（問い合わせボタン：.btnと同等の見た目） */
 .site-nav a.cta{
   display:inline-block;
-  background:#004B53;      /* ← 指定：背景 */
-  color:#fff;              /* ← 指定：白文字 */
+  background:#004B53;
+  color:#fff;
   padding:.8rem 1.2rem;
   border-radius:12px;
   border:none;
@@ -86,11 +86,9 @@ body{
 }
 
 /* overlay時（ヒーロー上）も同じ色に固定 */
-.site-header.is-overlay .site-nav a{
-  color:#004B53; /* ← 指定：リンクも同色 */
-}
+.site-header.is-overlay .site-nav a{ color:#004B53; }
 .site-header.is-overlay .site-nav a.cta{
-  color:#fff;     /* ← 指定：CTAは白文字 */
+  color:#fff;
   background:#004B53;
   box-shadow:0 14px 34px rgba(0,0,0,.25);
 }
@@ -141,14 +139,8 @@ main{ padding-top:var(--header-h); }
   box-shadow:0 10px 26px rgba(0,0,0,.06);
 }
 
-.grid3 h3{
-  margin:0 0 10px;
-}
-
-.grid3 p{
-  margin:0;
-  color:#333;
-}
+.grid3 h3{ margin:0 0 10px; }
+.grid3 p{ margin:0; color:#333; }
 
 /* CTA band（下部） */
 .cta-band{
@@ -272,9 +264,7 @@ main{ padding-top:var(--header-h); }
   margin:0 auto;
 }
 
-/* =====================
-   文字仕上げ（PC）
-===================== */
+/* 文字仕上げ（PC） */
 .hero.hero-video-wrap h1{
   font-size:clamp(34px,4.2vw,70px);
   line-height:1.18;
@@ -321,4 +311,189 @@ main{ padding-top:var(--header-h); }
 @media (max-width: 880px){
   .site-nav{display:none;}
   .grid3{ grid-template-columns:1fr; }
+}
+
+/* =========================================================
+   ▼ Services page：背景を白に戻す（他ページへ影響させない）
+   ※サービス内セクションが #004B53 を直指定していたため、
+     .page-services 配下で白に上書きする
+========================================================= */
+.page-services{
+  background:#fff;
+}
+
+/* Hero（サービス）を白へ */
+.page-services .page-hero.page-hero--service{
+  background:#fff;
+  padding:72px 20px 40px;
+  border-bottom:1px solid var(--border);
+}
+.page-services .page-hero.page-hero--service .inner{
+  max-width:1200px;
+  margin:0 auto;
+}
+.page-services .page-hero.page-hero--service h1{
+  margin:0 0 10px;
+  font-size:clamp(26px,3vw,42px);
+  letter-spacing:0.02em;
+  color:var(--brand);
+}
+.page-services .page-hero.page-hero--service .page-hero__lead,
+.page-services .page-hero.page-hero--service p{
+  margin:0;
+  color:#333;
+  line-height:1.8;
+}
+
+/* 提供できることセクションを白へ */
+.page-services .service-feature{
+  background:#fff;
+  padding:52px 0 72px;
+}
+.page-services .service-feature .inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+.page-services .service-feature__head{ margin:0 0 18px; }
+
+.page-services .section-title{
+  margin:0 0 8px;
+  color:var(--brand);
+  font-size:22px;
+  letter-spacing:.08em;
+}
+
+.page-services .section-lead{
+  margin:0;
+  color:#333;
+  max-width:860px;
+  line-height:1.8;
+}
+
+/* 3列 */
+.feature-grid{
+  list-style:none;
+  margin:26px 0 0;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:28px;
+}
+
+/* サービスページ上では本文色を黒系へ */
+.page-services .feature-card{ color:var(--fg); }
+
+/*
+  - media：はみ出しOK（黒帯が下に出る）
+  - frame：画像だけをクリップ＆枠線を持つ
+*/
+.feature-card__media{
+  position:relative;
+  overflow:visible;
+}
+
+.page-services .feature-card__frame{
+  height:320px;
+  overflow:hidden;
+  background:rgba(0,0,0,.03);
+  border:1px solid var(--border);
+}
+
+/* 実画像 */
+.feature-card__frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* 右端の縦ラベル（暗い帯＋縦書き） */
+.feature-card__label{
+  position:absolute;
+  top:0;
+  right:0;
+  height:320px;
+  width:44px;
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  background:rgba(0,0,0,.35);
+  z-index:3;
+}
+.feature-card__label span{
+  margin-top:10px;
+  color:rgba(255,255,255,.75);
+  font-weight:700;
+  letter-spacing:.22em;
+  font-size:12px;
+  writing-mode:vertical-rl;
+  text-orientation:mixed;
+}
+
+/* ★黒帯（2段） */
+.feature-card__title{
+  position:absolute;
+  left:18px;
+  bottom:0;
+  z-index:4;
+
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+
+  max-width: calc(100% - 76px);
+}
+
+/* 黒帯共通 */
+.badge-line{
+  display:inline-block;
+  background:rgba(0,0,0,.72);
+  color:#fff;
+  font-weight:800;
+  letter-spacing:.02em;
+  line-height:1.15;
+
+  padding:12px 14px;
+  box-decoration-break:clone;
+  -webkit-box-decoration-break:clone;
+
+  box-shadow:0 10px 18px rgba(0,0,0,.25);
+}
+
+/* 上の黒帯中央＝画像下枠線 */
+.badge-line--top{
+  transform: translateY(50%);
+}
+
+/* 下の黒帯 */
+.badge-line--bottom{
+  margin-top:18px;
+}
+
+/* 画像下の本文 */
+.feature-card__body{
+  padding:42px 0 0;
+}
+
+.page-services .feature-card__text{
+  margin:0;
+  color:#333;
+  font-size:14px;
+  line-height:1.95;
+  max-width:38em;
+}
+
+/* SP */
+@media (max-width:1040px){
+  .feature-grid{ grid-template-columns:1fr; }
+  .feature-card__frame{ height:320px; }
+  .feature-card__label{ height:320px; }
+  .feature-card__title{ max-width: calc(100% - 70px); }
+}
+
+@media (max-width:880px){
+  .service-feature .inner{ padding:0 16px; }
+  .feature-card__label{ width:40px; }
 }
