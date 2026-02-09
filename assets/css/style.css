@@ -315,8 +315,6 @@ main{ padding-top:var(--header-h); }
 
 /* =========================================================
    ▼ Services page：背景を白に戻す（他ページへ影響させない）
-   ※サービス内セクションが #004B53 を直指定していたため、
-     .page-services 配下で白に上書きする
 ========================================================= */
 .page-services{
   background:#fff;
@@ -385,32 +383,40 @@ main{ padding-top:var(--header-h); }
 /* サービスページ上では本文色を黒系へ */
 .page-services .feature-card{ color:var(--fg); }
 
-/*
-  - media：はみ出しOK（黒帯が下に出る）
-  - frame：画像だけをクリップ＆枠線を持つ
-*/
-.feature-card__media{
+/* =========================================================
+   ▼ Services cards：黒帯（PCのみ調整）
+   要件：上の黒帯の「中央」＝画像（frame）の下枠線
+========================================================= */
+
+/* media：基準箱 */
+.page-services .feature-card__media{
   position:relative;
   overflow:visible;
+  height:320px;
 }
 
+/* frame：画像枠（下枠線が基準） */
 .page-services .feature-card__frame{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
   height:320px;
   overflow:hidden;
-  background:rgba(0,0,0,.03);
   border:1px solid var(--border);
+  background:#f2f2f2;
 }
 
 /* 実画像 */
-.feature-card__frame img{
+.page-services .feature-card__frame img{
   width:100%;
   height:100%;
   object-fit:cover;
   display:block;
 }
 
-/* 右端の縦ラベル（暗い帯＋縦書き） */
-.feature-card__label{
+/* 右端縦ラベル */
+.page-services .feature-card__label{
   position:absolute;
   top:0;
   right:0;
@@ -422,9 +428,9 @@ main{ padding-top:var(--header-h); }
   background:rgba(0,0,0,.35);
   z-index:3;
 }
-.feature-card__label span{
-  margin-top:10px;
-  color:rgba(255,255,255,.75);
+.page-services .feature-card__label span{
+  margin-top:12px;
+  color:rgba(255,255,255,.80);
   font-weight:700;
   letter-spacing:.22em;
   font-size:12px;
@@ -432,49 +438,51 @@ main{ padding-top:var(--header-h); }
   text-orientation:mixed;
 }
 
-/* ★黒帯（2段） */
-.feature-card__title{
+/* 黒帯コンテナ：枠線位置（frame下端）に置く */
+.page-services .feature-card__title{
   position:absolute;
-  left:18px;
-  bottom:0;
+  left:24px;
+  top:320px;
   z-index:4;
 
   display:flex;
   flex-direction:column;
   align-items:flex-start;
 
-  max-width: calc(100% - 76px);
+  max-width: calc(100% - 90px);
 }
 
 /* 黒帯共通 */
-.badge-line{
+.page-services .badge-line{
   display:inline-block;
   background:rgba(0,0,0,.72);
   color:#fff;
   font-weight:800;
-  letter-spacing:.02em;
-  line-height:1.15;
-
-  padding:12px 14px;
+  letter-spacing:.01em;
+  line-height:1.12;
+  padding:16px 18px;
   box-decoration-break:clone;
   -webkit-box-decoration-break:clone;
-
-  box-shadow:0 10px 18px rgba(0,0,0,.25);
+  box-shadow:0 12px 26px rgba(0,0,0,.22);
 }
 
-/* 上の黒帯中央＝画像下枠線 */
-.badge-line--top{
-  transform: translateY(50%);
+/* 上の黒帯：中央を枠線に合わせる（見た目が上に上がる） */
+.page-services .badge-line--top{
+  transform: translateY(-50%);
 }
 
-/* 下の黒帯 */
-.badge-line--bottom{
-  margin-top:18px;
+/*
+  ★ここが“できてなかった”原因の解消
+  transformはレイアウトに効かないので、下段を同量だけ引き上げて相殺する
+  → 完全密着にするため、負のmarginで引き上げる
+*/
+.page-services .badge-line--bottom{
+  margin-top:-26px; /* ★完全密着（隙間ゼロ） */
 }
 
-/* 画像下の本文 */
-.feature-card__body{
-  padding:42px 0 0;
+/* 本文：黒帯が詰まった分だけ最適化 */
+.page-services .feature-card__body{
+  padding:64px 0 0;
 }
 
 .page-services .feature-card__text{
@@ -485,15 +493,14 @@ main{ padding-top:var(--header-h); }
   max-width:38em;
 }
 
-/* SP */
 @media (max-width:1040px){
   .feature-grid{ grid-template-columns:1fr; }
-  .feature-card__frame{ height:320px; }
-  .feature-card__label{ height:320px; }
-  .feature-card__title{ max-width: calc(100% - 70px); }
+  .page-services .feature-card__media{ height:320px; }
+  .page-services .feature-card__title{ max-width: calc(100% - 84px); }
 }
 
 @media (max-width:880px){
   .service-feature .inner{ padding:0 16px; }
-  .feature-card__label{ width:40px; }
+  .page-services .feature-card__label{ width:40px; }
+  .page-services .feature-card__title{ left:18px; max-width: calc(100% - 78px); }
 }
