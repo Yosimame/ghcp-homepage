@@ -1,3 +1,4 @@
+/* assets/css/style.css（全文差し替え） */
 :root{
   --fg:#111;
   --bg:#fff;
@@ -450,6 +451,15 @@ main{ padding-top:var(--header-h); }
   align-items:flex-start;
 
   max-width: calc(100% - 90px);
+}
+
+/* ▼ PCのみ：黒帯の左端を「画像の左枠（frame左端）」に合わせる */
+@media (min-width: 881px){
+  .page-services .feature-card__title{
+    left:0;               /* ★画像の左枠に合わせる */
+    right:56px;           /* 右の縦ラベル（44px）と干渉しない余白 */
+    max-width:none;       /* right指定で横幅管理する */
+  }
 }
 
 /* 黒帯共通 */
