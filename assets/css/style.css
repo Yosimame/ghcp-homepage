@@ -1,3 +1,4 @@
+/* assets/css/style.css（全文差し替え） */
 :root{
   --fg:#111;
   --bg:#fff;
@@ -385,17 +386,13 @@ main{ padding-top:var(--header-h); }
 
 /* =========================================================
    ▼ Services cards：黒帯（PCのみ調整）
-   要件：上の黒帯の「中央」＝画像（frame）の下枠線
 ========================================================= */
-
-/* media：基準箱 */
 .page-services .feature-card__media{
   position:relative;
   overflow:visible;
   height:320px;
 }
 
-/* frame：画像枠（下枠線が基準） */
 .page-services .feature-card__frame{
   position:absolute;
   top:0;
@@ -407,7 +404,6 @@ main{ padding-top:var(--header-h); }
   background:#f2f2f2;
 }
 
-/* 実画像 */
 .page-services .feature-card__frame img{
   width:100%;
   height:100%;
@@ -415,7 +411,6 @@ main{ padding-top:var(--header-h); }
   display:block;
 }
 
-/* 右端縦ラベル */
 .page-services .feature-card__label{
   position:absolute;
   top:0;
@@ -438,7 +433,6 @@ main{ padding-top:var(--header-h); }
   text-orientation:mixed;
 }
 
-/* 黒帯コンテナ：枠線位置（frame下端）に置く */
 .page-services .feature-card__title{
   position:absolute;
   left:24px;
@@ -452,16 +446,14 @@ main{ padding-top:var(--header-h); }
   max-width: calc(100% - 90px);
 }
 
-/* ▼ PCのみ：黒帯の左端を「画像の左枠（frame左端）」に合わせる */
 @media (min-width: 881px){
   .page-services .feature-card__title{
-    left:0;               /* ★画像の左枠に合わせる */
-    right:56px;           /* 右の縦ラベル（44px）と干渉しない余白 */
-    max-width:none;       /* right指定で横幅管理する */
+    left:0;
+    right:56px;
+    max-width:none;
   }
 }
 
-/* 黒帯共通 */
 .page-services .badge-line{
   display:inline-block;
   background:rgba(0,0,0,.72);
@@ -475,21 +467,14 @@ main{ padding-top:var(--header-h); }
   box-shadow:0 12px 26px rgba(0,0,0,.22);
 }
 
-/* 上の黒帯：中央を枠線に合わせる（見た目が上に上がる） */
 .page-services .badge-line--top{
   transform: translateY(-50%);
 }
 
-/*
-  ★ここが“できてなかった”原因の解消
-  transformはレイアウトに効かないので、下段を同量だけ引き上げて相殺する
-  → 完全密着にするため、負のmarginで引き上げる
-*/
 .page-services .badge-line--bottom{
-  margin-top:-26px; /* ★完全密着（隙間ゼロ） */
+  margin-top:-26px;
 }
 
-/* 本文：黒帯が詰まった分だけ最適化 */
 .page-services .feature-card__body{
   padding:88px 0 0;
 }
@@ -512,4 +497,13 @@ main{ padding-top:var(--header-h); }
   .service-feature .inner{ padding:0 16px; }
   .page-services .feature-card__label{ width:40px; }
   .page-services .feature-card__title{ left:18px; max-width: calc(100% - 78px); }
+}
+
+/* =========================================================
+   ▼ Works page：PCで4件を「3列時と同じカード幅」にする
+   方針：works-gridの器（max-width）を広げ、4列でもカード幅を維持
+========================================================= */
+.page-works .works-grid{
+  grid-template-columns:repeat(4, 1fr);
+  max-width:1312px; /* 3列時のカード幅（.grid3の980px基準）を4列でも維持するための器 */
 }
