@@ -22,10 +22,11 @@
     .page-works .works-hero__inner{
       width:min(1120px, 100%);
       margin:0 auto;
-      display:grid;
-      grid-template-columns:minmax(0, 1.1fr) minmax(300px, .9fr);
-      gap:40px;
-      align-items:end;
+      display:block;
+    }
+
+    .page-works .works-hero__content{
+      max-width:720px;
     }
 
     .page-works .works-hero__eyebrow{
@@ -62,52 +63,6 @@
       font-size:16px;
       line-height:2;
       color:#35545a;
-    }
-
-    .page-works .works-hero__panel{
-      padding:28px 28px 26px;
-      border:1px solid rgba(0,75,83,.14);
-      border-radius:24px;
-      background:#fff;
-      box-shadow:0 18px 40px rgba(11,39,46,.08);
-    }
-
-    .page-works .works-hero__panel-title{
-      margin:0 0 14px;
-      font-size:14px;
-      font-weight:700;
-      letter-spacing:.08em;
-      color:#004b53;
-    }
-
-    .page-works .works-hero__panel-list{
-      display:grid;
-      gap:14px;
-      margin:0;
-      padding:0;
-      list-style:none;
-    }
-
-    .page-works .works-hero__panel-list li{
-      padding-top:14px;
-      border-top:1px solid rgba(0,75,83,.12);
-      font-size:14px;
-      line-height:1.9;
-      color:#35545a;
-    }
-
-    .page-works .works-hero__panel-list li:first-child{
-      padding-top:0;
-      border-top:none;
-    }
-
-    .page-works .works-hero__panel-label{
-      display:block;
-      margin-bottom:4px;
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:.08em;
-      color:#004b53;
     }
 
     .page-works .works-section{
@@ -434,7 +389,6 @@
         grid-template-columns:repeat(2, minmax(0,1fr));
       }
 
-      .page-works .works-hero__inner,
       .page-works .featured-case{
         grid-template-columns:1fr;
       }
@@ -481,21 +435,18 @@
 <body class="page-works">
 
   <header class="site-header is-solid">
-    <div class="site-header__inner">
-      <a class="site-logo" href="./index.html" aria-label="GHCP トップページへ">
-        <span class="site-logo__text">GHCP</span>
-      </a>
+    <a class="brand" href="./index.html" aria-label="GHCP トップページへ">
+      <img src="./assets/img/ghcp_logo_symbol.svg" class="symbol" alt="GHCPシンボルロゴ">
+      <img src="./assets/img/ghcp_logo_wordmark.svg" class="wordmark" alt="GHCP">
+    </a>
 
-      <nav class="site-nav" aria-label="グローバルナビゲーション">
-        <ul class="site-nav__list">
-          <li><a href="./services.html">サービス</a></li>
-          <li><a href="./works.html" aria-current="page">実績</a></li>
-          <li><a href="./features.html">特徴</a></li>
-          <li><a href="./company.html">会社概要</a></li>
-          <li><a class="site-nav__cta" href="./contact.html">お問い合わせ</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="site-nav" aria-label="グローバルナビゲーション">
+      <a href="./services.html">サービス</a>
+      <a href="./works.html" aria-current="page">実績</a>
+      <a href="./features.html">特徴</a>
+      <a href="./company.html">会社概要</a>
+      <a class="cta" href="./contact.html">お問い合わせ</a>
+    </nav>
   </header>
 
   <main>
@@ -511,24 +462,6 @@
             ここでは、その一部の事例をご紹介します。
           </p>
         </div>
-
-        <aside class="works-hero__panel" aria-label="GHCPの支援スタンス">
-          <h2 class="works-hero__panel-title">GHCPが実績ページで伝えたいこと</h2>
-          <ul class="works-hero__panel-list">
-            <li>
-              <span class="works-hero__panel-label">01｜課題整理</span>
-              目の前の作業ではなく、現場で何が詰まり、何が属人化しているかを整理します。
-            </li>
-            <li>
-              <span class="works-hero__panel-label">02｜運用設計</span>
-              システム導入だけでなく、運用フロー・役割分担・定着方法まで設計します。
-            </li>
-            <li>
-              <span class="works-hero__panel-label">03｜伴走支援</span>
-              PM/PMO・BPO・DX推進の実務に入り込み、成果が出る状態まで支援します。
-            </li>
-          </ul>
-        </aside>
       </div>
     </section>
 
