@@ -501,12 +501,470 @@ main{ padding-top:var(--header-h); }
 }
 
 /* =========================================================
-   ▼ Works page：PCで4件を「3列時と同じカード幅」にする
-   方針：works-gridの器（max-width）を広げ、4列でもカード幅を維持
+   ▼ Works page：営業資料として見せる実績ページ
+   影響範囲：.page-works に限定
 ========================================================= */
+.page-works{
+  background:#fff;
+}
+
+.page-works .works-hero{
+  padding:72px 20px 56px;
+  background:linear-gradient(180deg, rgba(0,75,83,.07) 0%, rgba(0,75,83,.02) 55%, #fff 100%);
+}
+
+.page-works .works-hero__inner,
+.page-works .works-section__inner,
+.page-works .works-cta__inner{
+  width:min(1200px, calc(100% - 40px));
+  margin:0 auto;
+}
+
+.page-works .works-hero__inner{
+  display:grid;
+  grid-template-columns:minmax(0, 1.2fr) minmax(320px, .8fr);
+  gap:32px;
+  align-items:end;
+}
+
+.page-works .works-hero__eyebrow,
+.page-works .works-section__eyebrow{
+  margin:0 0 12px;
+  color:var(--brand);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.page-works .works-hero__title{
+  margin:0;
+  color:#103238;
+  font-size:clamp(34px, 5vw, 58px);
+  line-height:1.08;
+  letter-spacing:.02em;
+}
+
+.page-works .works-hero__lead{
+  margin:20px 0 0;
+  color:#35575d;
+  font-size:16px;
+  line-height:2;
+}
+
+.page-works .works-hero__panel{
+  padding:28px;
+  background:#fff;
+  border:1px solid rgba(0,75,83,.10);
+  border-radius:24px;
+  box-shadow:0 16px 34px rgba(0,0,0,.06);
+}
+
+.page-works .works-hero__panel-title{
+  margin:0 0 14px;
+  color:#103238;
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+
+.page-works .works-hero__panel-list{
+  list-style:none;
+  margin:0;
+  padding:0;
+  display:grid;
+  gap:14px;
+}
+
+.page-works .works-hero__panel-list li{
+  padding-top:14px;
+  border-top:1px solid rgba(0,75,83,.10);
+  color:#46666b;
+  font-size:14px;
+  line-height:1.9;
+}
+
+.page-works .works-hero__panel-list li:first-child{
+  padding-top:0;
+  border-top:none;
+}
+
+.page-works .works-hero__panel-label{
+  display:block;
+  margin-bottom:4px;
+  color:var(--brand);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+.page-works .works-section{
+  padding:0 20px 80px;
+}
+
+.page-works .works-section__head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:24px;
+  margin-bottom:28px;
+}
+
+.page-works .works-section__title{
+  margin:0;
+  color:#103238;
+  font-size:clamp(26px, 3vw, 38px);
+  line-height:1.25;
+}
+
+.page-works .works-section__desc{
+  margin:0;
+  max-width:680px;
+  color:#4a686d;
+  font-size:15px;
+  line-height:1.9;
+}
+
+.page-works .works-chip{
+  display:inline-flex;
+  align-items:center;
+  min-height:32px;
+  padding:0 14px;
+  border-radius:999px;
+  background:#e8f3f4;
+  color:var(--brand);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+
+.page-works .featured-case{
+  display:grid;
+  grid-template-columns:minmax(0, 1.15fr) minmax(300px, .85fr);
+  gap:24px;
+  padding:34px;
+  background:#f7fbfb;
+  border:1px solid rgba(0,75,83,.10);
+  border-radius:28px;
+  box-shadow:0 16px 36px rgba(0,0,0,.05);
+}
+
+.page-works .featured-case__meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-bottom:16px;
+}
+
+.page-works .featured-case__title{
+  margin:0 0 18px;
+  color:#103238;
+  font-size:clamp(28px, 3vw, 42px);
+  line-height:1.3;
+}
+
+.page-works .featured-case__summary{
+  margin:0;
+  color:#3d5f64;
+  font-size:16px;
+  line-height:1.95;
+}
+
+.page-works .featured-case__grid{
+  margin-top:26px;
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:18px;
+}
+
+.page-works .featured-case__item{
+  padding:20px 22px;
+  background:#fff;
+  border:1px solid rgba(0,75,83,.10);
+  border-radius:20px;
+}
+
+.page-works .featured-case__label{
+  margin:0 0 10px;
+  color:var(--brand);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+.page-works .featured-case__text{
+  margin:0;
+  color:#46666b;
+  font-size:14px;
+  line-height:1.9;
+}
+
+.page-works .featured-case__side{
+  display:grid;
+  gap:18px;
+  align-content:start;
+}
+
+.page-works .featured-case__card{
+  padding:24px;
+  border-radius:22px;
+}
+
+.page-works .featured-case__card--dark{
+  background:#103238;
+  color:#fff;
+  box-shadow:0 16px 30px rgba(0,0,0,.12);
+}
+
+.page-works .featured-case__card--light{
+  background:#fff;
+  color:var(--fg);
+  border:1px solid rgba(0,75,83,.10);
+}
+
+.page-works .featured-case__card-title{
+  margin:0 0 12px;
+  font-size:15px;
+  font-weight:800;
+  letter-spacing:.04em;
+}
+
+.page-works .featured-case__list{
+  margin:0;
+  padding-left:18px;
+}
+
+.page-works .featured-case__list li{
+  margin:0 0 10px;
+  line-height:1.85;
+  font-size:14px;
+}
+
+.page-works .featured-case__list li:last-child{
+  margin-bottom:0;
+}
+
 .page-works .works-grid{
-  grid-template-columns:repeat(4, 1fr);
-  max-width:1312px; /* 3列時のカード幅（.grid3の980px基準）を4列でも維持するための器 */
+  list-style:none;
+  margin:0 auto;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:22px;
+  max-width:1200px;
+}
+
+.page-works .works-card{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  padding:28px;
+  background:#fff;
+  border:1px solid rgba(0,75,83,.10);
+  border-radius:24px;
+  box-shadow:0 14px 30px rgba(0,0,0,.05);
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.page-works .works-card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 36px rgba(0,0,0,.09);
+  border-color:rgba(0,75,83,.18);
+}
+
+.page-works .works-card__meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-bottom:14px;
+}
+
+.page-works .works-card__title{
+  margin:0 0 14px;
+  color:#103238;
+  font-size:24px;
+  line-height:1.45;
+}
+
+.page-works .works-card__block{
+  margin-top:16px;
+  padding-top:16px;
+  border-top:1px solid rgba(0,75,83,.10);
+}
+
+.page-works .works-card__block:first-of-type{
+  margin-top:0;
+  padding-top:0;
+  border-top:none;
+}
+
+.page-works .works-card__label{
+  margin:0 0 8px;
+  color:var(--brand);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.08em;
+}
+
+.page-works .works-card__text{
+  margin:0;
+  color:#49676c;
+  font-size:14px;
+  line-height:1.9;
+}
+
+.page-works .works-approach{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+  max-width:1200px;
+  margin:0 auto;
+}
+
+.page-works .works-approach__card{
+  padding:28px;
+  background:#f8fbfb;
+  border:1px solid rgba(0,75,83,.10);
+  border-radius:22px;
+}
+
+.page-works .works-approach__step{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  margin-bottom:16px;
+  border-radius:999px;
+  background:var(--brand);
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  letter-spacing:.06em;
+}
+
+.page-works .works-approach__title{
+  margin:0 0 10px;
+  color:#103238;
+  font-size:20px;
+  line-height:1.5;
+}
+
+.page-works .works-approach__text{
+  margin:0;
+  color:#49676c;
+  font-size:14px;
+  line-height:1.95;
+}
+
+.page-works .works-cta{
+  padding:0 20px 96px;
+}
+
+.page-works .works-cta__inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+  padding:36px;
+  background:#103238;
+  border-radius:28px;
+  color:#fff;
+}
+
+.page-works .works-cta__title{
+  margin:0 0 10px;
+  font-size:clamp(24px, 3vw, 34px);
+  line-height:1.4;
+}
+
+.page-works .works-cta__text{
+  margin:0;
+  max-width:680px;
+  color:rgba(255,255,255,.86);
+  font-size:15px;
+  line-height:1.9;
+}
+
+.page-works .works-cta__button{
+  flex:0 0 auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:220px;
+  min-height:54px;
+  padding:0 24px;
+  background:#fff;
+  color:#103238;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  transition:transform .2s ease, opacity .2s ease;
+}
+
+.page-works .works-cta__button:hover{
+  transform:translateY(-2px);
+  opacity:.94;
+}
+
+@media (max-width: 1100px){
+  .page-works .works-hero__inner,
+  .page-works .featured-case{
+    grid-template-columns:1fr;
+  }
+
+  .page-works .works-grid,
+  .page-works .works-approach{
+    grid-template-columns:repeat(2, 1fr);
+  }
+
+  .page-works .works-section__head,
+  .page-works .works-cta__inner{
+    display:block;
+  }
+
+  .page-works .works-section__desc{
+    margin-top:14px;
+  }
+
+  .page-works .works-cta__button{
+    margin-top:20px;
+  }
+}
+
+@media (max-width: 767px){
+  .page-works .works-hero{
+    padding:56px 0 44px;
+  }
+
+  .page-works .works-hero__inner,
+  .page-works .works-section__inner,
+  .page-works .works-cta__inner{
+    width:min(100%, calc(100% - 32px));
+  }
+
+  .page-works .featured-case{
+    padding:22px;
+  }
+
+  .page-works .featured-case__grid,
+  .page-works .works-grid,
+  .page-works .works-approach{
+    grid-template-columns:1fr;
+  }
+
+  .page-works .works-card,
+  .page-works .works-approach__card{
+    padding:22px;
+  }
+
+  .page-works .works-cta__inner{
+    padding:28px 22px;
+  }
+
+  .page-works .works-cta__button{
+    width:100%;
+  }
 }
 
 /* =========================================================
@@ -514,7 +972,7 @@ main{ padding-top:var(--header-h); }
    影響範囲：.page-company に限定
 ========================================================= */
 .page-company .company{
-  padding:40px 16px 56px; /* ←修正：上の欠け防止のため上余白を増やす（24px→40px） */
+  padding:40px 16px 56px;
 }
 
 .page-company .company__container{
@@ -560,7 +1018,7 @@ main{ padding-top:var(--header-h); }
 .page-company .company-label--tall{
   padding-top:18px;
   padding-bottom:18px;
-  min-height:520px; /* 地図の高さに合わせる（必要に応じて微調整） */
+  min-height:520px;
 }
 
 /* 右側テキスト */
