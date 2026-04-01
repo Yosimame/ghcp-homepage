@@ -339,58 +339,100 @@ main{
   background:#fff;
 }
 
-.page-services .page-hero.page-hero--service{
-  background:#fff;
-  padding:72px 20px 40px;
-  border-bottom:1px solid var(--border);
+.page-services .services-hero{
+  padding:120px 24px 72px;
+  background:
+    linear-gradient(180deg, rgba(0,75,83,.06) 0%, rgba(0,75,83,.02) 55%, rgba(255,255,255,1) 100%);
 }
 
-.page-services .page-hero.page-hero--service .inner{
-  max-width:1200px;
+.page-services .services-hero__inner{
+  width:min(1120px, 100%);
   margin:0 auto;
+  display:block;
 }
 
-.page-services .page-hero.page-hero--service h1{
-  margin:0 0 10px;
-  font-size:clamp(26px,3vw,42px);
-  letter-spacing:.02em;
-  color:var(--brand);
+.page-services .services-hero__content{
+  max-width:720px;
 }
 
-.page-services .page-hero.page-hero--service .page-hero__lead,
-.page-services .page-hero.page-hero--service p{
+.page-services .services-hero__eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin:0 0 18px;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#004b53;
+}
+
+.page-services .services-hero__eyebrow::before{
+  content:"";
+  width:42px;
+  height:1px;
+  background:#004b53;
+  opacity:.5;
+}
+
+.page-services .services-hero__title{
   margin:0;
-  color:#333;
-  line-height:1.8;
+  font-size:clamp(34px, 5vw, 60px);
+  line-height:1.08;
+  letter-spacing:.02em;
+  color:#0f2d33;
+}
+
+.page-services .services-hero__lead{
+  margin:22px 0 0;
+  max-width:720px;
+  font-size:16px;
+  line-height:2;
+  color:#35545a;
 }
 
 .page-services .service-feature{
   background:#fff;
-  padding:52px 0 72px;
+  padding:0 0 72px;
 }
 
 .page-services .service-feature .inner{
-  max-width:1200px;
+  width:min(1120px, 100%);
   margin:0 auto;
   padding:0 24px;
 }
 
 .page-services .service-feature__head{
-  margin:0 0 18px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:space-between;
+  align-items:end;
+  gap:18px;
+  margin:0 0 28px;
+}
+
+.page-services .service-feature__eyebrow{
+  margin:0 0 10px;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:#004b53;
 }
 
 .page-services .section-title{
-  margin:0 0 8px;
-  color:var(--brand);
-  font-size:22px;
-  letter-spacing:.08em;
+  margin:0;
+  font-size:clamp(26px, 3vw, 38px);
+  line-height:1.25;
+  color:#102f35;
 }
 
 .page-services .section-lead{
   margin:0;
-  color:#333;
-  max-width:860px;
-  line-height:1.8;
+  max-width:700px;
+  font-size:15px;
+  line-height:1.9;
+  color:#4c666b;
 }
 
 .feature-grid{
