@@ -2945,3 +2945,94 @@ main{
     line-height:1.9;
   }
 }
+/* =========================================================
+   ▼ About page top override（全文維持のまま最下部で上書き）
+========================================================= */
+.page-about .about-hero{
+  padding:120px 24px 72px; /* ← ★ここだけ変更（servicesに合わせる） */
+  background:linear-gradient(180deg, rgba(0,75,83,.07) 0%, rgba(0,75,83,.02) 55%, #fff 100%);
+}
+
+.page-about .about-hero__inner,
+.page-about .about-philosophy .inner,
+.page-about .about-features .inner,
+.page-about .about-process .inner,
+.page-about .about-value .inner,
+.page-about .about-message .inner{
+  width:min(1200px, calc(100% - 40px));
+  margin:0 auto;
+}
+
+.page-about .about-hero__content{
+  max-width:760px;
+}
+
+.page-about .about-hero__eyebrow,
+.page-about .about-section-head__eyebrow{
+  margin:0 0 12px;
+  color:var(--brand);
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+}
+
+.page-about .about-hero__title{
+  margin:0;
+  color:#103238;
+  font-size:clamp(34px, 5vw, 58px);
+  line-height:1.08;
+  letter-spacing:.02em;
+}
+
+.page-about .about-hero__lead{
+  margin:20px 0 0;
+  max-width:760px;
+  color:#35575d;
+  font-size:16px;
+  line-height:2;
+}
+
+.page-about .about-section-head{
+  margin:0 0 28px;
+  text-align:left;
+}
+
+.page-about .about-section-head.about-section-head--lead{
+  max-width:760px;
+}
+
+.page-about .about-section-head h2{
+  margin:0;
+  color:#103238;
+  font-size:clamp(26px, 3vw, 38px);
+  line-height:1.25;
+}
+
+.page-about .about-section-head p{
+  margin:14px 0 0;
+  max-width:760px;
+  color:#4a686d;
+  font-size:15px;
+  line-height:1.9;
+}
+
+@media (max-width: 767px){
+  .page-about .about-hero{
+    padding:56px 0 44px;
+  }
+
+  .page-about .about-hero__inner,
+  .page-about .about-philosophy .inner,
+  .page-about .about-features .inner,
+  .page-about .about-process .inner,
+  .page-about .about-value .inner,
+  .page-about .about-message .inner{
+    width:min(100%, calc(100% - 32px));
+  }
+
+  .page-about .about-hero__lead{
+    font-size:15px;
+    line-height:1.9;
+  }
+}
