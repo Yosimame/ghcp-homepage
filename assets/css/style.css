@@ -3014,3 +3014,55 @@ main{
   background:#004b53;
   opacity:.5;
 }
+
+/* =========================================================
+   ▼ Company page final override（about.html と開始位置・eyebrowを統一）
+   ※既存定義は削除せず、最下部で上書き
+========================================================= */
+.page-company .company{
+  padding:120px 0 72px !important;
+}
+
+.page-company .company__container{
+  width:min(1200px, calc(100% - 40px)) !important;
+  max-width:none !important;
+  margin:0 auto !important;
+}
+
+.page-company .company-message__eyebrow{
+  display:inline-flex !important;
+  align-items:center !important;
+  gap:10px !important;
+  margin:0 0 12px !important;
+  color:var(--brand) !important;
+  font-size:12px !important;
+  font-weight:800 !important;
+  letter-spacing:.16em !important;
+  text-transform:uppercase !important;
+}
+
+.page-company .company-message__eyebrow::before{
+  content:"";
+  width:42px;
+  height:1px;
+  background:#004b53;
+  opacity:.5;
+}
+
+.page-company .company__title{
+  margin:0 0 12px !important;
+}
+
+.page-company .company-message__headline{
+  margin:0 0 28px !important;
+}
+
+@media (max-width: 767px){
+  .page-company .company{
+    padding:56px 0 56px !important;
+  }
+
+  .page-company .company__container{
+    width:min(100%, calc(100% - 32px)) !important;
+  }
+}
