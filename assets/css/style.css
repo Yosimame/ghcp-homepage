@@ -2986,3 +2986,31 @@ main{
     line-height:1.9;
   }
 }
+
+/* =========================================================
+   ▼ eyebrow横線統一（services / works / about）
+   全文維持のまま最下部で上書き
+========================================================= */
+.page-services .services-hero__eyebrow,
+.page-services .service-feature__eyebrow,
+.page-works .works-hero__eyebrow,
+.page-works .works-section__eyebrow,
+.page-about .about-hero__eyebrow,
+.page-about .about-section-head__eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+}
+
+.page-services .services-hero__eyebrow::before,
+.page-services .service-feature__eyebrow::before,
+.page-works .works-hero__eyebrow::before,
+.page-works .works-section__eyebrow::before,
+.page-about .about-hero__eyebrow::before,
+.page-about .about-section-head__eyebrow::before{
+  content:"";
+  width:42px;
+  height:1px;
+  background:#004b53;
+  opacity:.5;
+}
