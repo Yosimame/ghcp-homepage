@@ -31,87 +31,81 @@
     </nav>
   </header>
 
-  <main>
-    <section class="company-hero">
-      <div class="company-hero__inner">
-        <div class="company-hero__content">
-          <p class="company-hero__eyebrow">MESSAGE</p>
-          <h1 class="company-hero__title">代表からのメッセージ</h1>
-          <h2 class="company-hero__headline">現場で機能する仕組みを、構想だけで終わらせない。</h2>
+  <main class="company">
+    <div class="company__container">
 
-          <div class="company-hero__body">
-            <p>多くの組織では、業務が属人化し、担当者に依存した運用が続いています。</p>
+      <section class="company-message" aria-label="社長からのメッセージ">
+        <p class="company-message__eyebrow">MESSAGE</p>
 
-            <p>その結果、引き継ぎができない、改善が進まない、プロジェクトが停滞するといった課題が生まれます。</p>
+        <h1 class="company__title">代表からのメッセージ</h1>
 
-            <p>GHCPは「現場プロトコルコンフィグレーション」という考え方をもとに、現場の業務を理解し、業務プロセスを設計し、テクノロジーを組み合わせることで、継続的に成果が出る仕組みづくりを支援します。</p>
+        <h2 class="company-message__headline">現場で機能する仕組みを、構想だけで終わらせない。</h2>
 
-            <p>提案で終わるのではなく、実装・運用まで伴走し、現場で機能する仕組みを構築する。</p>
+        <div class="company-message__body">
+          <p>多くの組織では、業務が属人化し、担当者に依存した運用が続いています。</p>
 
-            <p>それがGHCPの役割です。</p>
+          <p>その結果、引き継ぎができない、改善が進まない、プロジェクトが停滞するといった課題が生まれます。</p>
 
-            <p class="company-hero__signature">GHCP<br>代表　道須 佳次</p>
+          <p>GHCPは「現場プロトコルコンフィグレーション」という考え方をもとに、 現場の業務を理解し、業務プロセスを設計し、テクノロジーを組み合わせることで、 継続的に成果が出る仕組みづくりを支援します。</p>
+
+          <p>提案で終わるのではなく、実装・運用まで伴走し、現場で機能する仕組みを構築する。</p>
+
+          <p>それがGHCPの役割です。</p>
+
+          <p class="company-message__signature">GHCP<br>代表　道須 佳次</p>
+        </div>
+      </section>
+
+      <h2 class="company__title company__title--sub">会社概要</h2>
+
+      <section class="company-table" aria-label="会社情報">
+        <div class="company-row">
+          <div class="company-label">会社名</div>
+          <div class="company-value">GHCP</div>
+        </div>
+
+        <div class="company-row">
+          <div class="company-label">設立</div>
+          <div class="company-value">2024年8月</div>
+        </div>
+
+        <div class="company-row">
+          <div class="company-label">事業内容</div>
+          <div class="company-value">
+            プロジェクト推進（PMO）事業 ／ DX推進支援事業 ／ 業務システム設計・開発事業
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="company-profile">
-      <div class="inner">
-        <div class="about-section-head">
-          <p class="about-section-head__eyebrow">Company</p>
-          <h2>会社概要</h2>
+        <div class="company-row company-row--address">
+          <div class="company-label company-label--tall">住所</div>
+          <div class="company-value">
+            <div class="company-address">大阪府大阪市北区中津</div>
+
+            <div class="company-map" aria-label="地図">
+              <iframe
+                title="GHCP 所在地（大阪府大阪市北区中津）"
+                src="https://www.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E4%B8%AD%E6%B4%A5&output=embed"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
         </div>
 
-        <section class="company-table" aria-label="会社情報">
-          <div class="company-row">
-            <div class="company-label">会社名</div>
-            <div class="company-value">GHCP</div>
-          </div>
+        <div class="company-row">
+          <div class="company-label">営業時間</div>
+          <div class="company-value">9:00～18:00</div>
+        </div>
 
-          <div class="company-row">
-            <div class="company-label">設立</div>
-            <div class="company-value">2024年8月</div>
+        <div class="company-row">
+          <div class="company-label">電話番号</div>
+          <div class="company-value">
+            <a class="company-tel" href="tel:08024384289">080-2438-4289</a>
           </div>
-
-          <div class="company-row">
-            <div class="company-label">事業内容</div>
-            <div class="company-value">
-              プロジェクト推進（PMO）事業 ／ DX推進支援事業 ／ 業務システム設計・開発事業
-            </div>
-          </div>
-
-          <div class="company-row company-row--address">
-            <div class="company-label company-label--tall">住所</div>
-            <div class="company-value">
-              <div class="company-address">大阪府大阪市北区中津</div>
-
-              <div class="company-map" aria-label="地図">
-                <iframe
-                  title="GHCP 所在地（大阪府大阪市北区中津）"
-                  src="https://www.google.com/maps?q=%E5%A4%A7%E9%98%AA%E5%BA%9C%E5%A4%A7%E9%98%AA%E5%B8%82%E5%8C%97%E5%8C%BA%E4%B8%AD%E6%B4%A5&output=embed"
-                  loading="lazy"
-                  referrerpolicy="no-referrer-when-downgrade"
-                  allowfullscreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
-
-          <div class="company-row">
-            <div class="company-label">営業時間</div>
-            <div class="company-value">9:00～18:00</div>
-          </div>
-
-          <div class="company-row">
-            <div class="company-label">電話番号</div>
-            <div class="company-value">
-              <a class="company-tel" href="tel:08024384289">080-2438-4289</a>
-            </div>
-          </div>
-        </section>
-      </div>
-    </section>
+        </div>
+      </section>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -119,3 +113,4 @@
   </footer>
 </body>
 </html>
+

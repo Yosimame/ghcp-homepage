@@ -3014,52 +3014,46 @@ main{
   background:#004b53;
   opacity:.5;
 }
+
 /* =========================================================
-   ▼ Company page top redesign（about / works / services と導入構造を統一）
-   ※既存全文維持のまま最下部で上書き
+   ▼ company キャッチコピー1行表示（PCのみ最終上書き）
 ========================================================= */
-.page-company{
-  background:#fff;
+@media (min-width: 1025px){
+  .page-company .company-message__headline{
+    font-size:clamp(28px, 3.4vw, 44px);
+    line-height:1.2;
+    white-space:nowrap;
+  }
 }
 
+
+/* =========================================================
+   ▼ Company 最終調整（統一＋1行表示）
+========================================================= */
 .page-company .company{
-  padding:0 !important;
+  padding:120px 24px 72px;
 }
 
 .page-company .company__container{
-  width:auto !important;
-  max-width:none !important;
-  margin:0 !important;
-}
-
-.page-company .company-hero{
-  padding:120px 24px 72px;
-  background:linear-gradient(180deg, rgba(0,75,83,.07) 0%, rgba(0,75,83,.02) 55%, #fff 100%);
-}
-
-.page-company .company-hero__inner,
-.page-company .company-profile .inner{
   width:min(1200px, calc(100% - 40px));
   margin:0 auto;
 }
 
-.page-company .company-hero__content{
-  max-width:760px;
+@media (min-width:1025px){
+  .page-company .company-message__headline{
+    font-size:clamp(28px, 3.2vw, 42px);
+    line-height:1.2;
+    white-space:nowrap;
+  }
 }
 
-.page-company .company-hero__eyebrow{
+.page-company .company-message__eyebrow{
   display:inline-flex;
   align-items:center;
   gap:10px;
-  margin:0 0 12px;
-  color:var(--brand);
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.16em;
-  text-transform:uppercase;
 }
 
-.page-company .company-hero__eyebrow::before{
+.page-company .company-message__eyebrow::before{
   content:"";
   width:42px;
   height:1px;
@@ -3067,245 +3061,3 @@ main{
   opacity:.5;
 }
 
-.page-company .company-hero__title{
-  margin:0;
-  color:#103238;
-  font-size:clamp(34px, 5vw, 58px);
-  line-height:1.08;
-  letter-spacing:.02em;
-}
-
-.page-company .company-hero__headline{
-  margin:20px 0 0;
-  color:#103238;
-  font-size:clamp(26px, 3vw, 38px);
-  line-height:1.35;
-  font-weight:800;
-  letter-spacing:.02em;
-}
-
-.page-company .company-hero__body{
-  margin-top:28px;
-  max-width:860px;
-}
-
-.page-company .company-hero__body p{
-  margin:0 0 22px;
-  color:#24383c;
-  font-size:18px;
-  line-height:2;
-  font-weight:600;
-}
-
-.page-company .company-hero__signature{
-  margin-top:30px;
-  color:#103238;
-  font-size:16px;
-  font-weight:800;
-  line-height:1.9;
-}
-
-.page-company .company-profile{
-  padding:0 20px 96px;
-}
-
-.page-company .company-profile .about-section-head{
-  margin:0 0 28px;
-  text-align:left;
-}
-
-.page-company .company-profile .about-section-head__eyebrow{
-  display:inline-flex;
-  align-items:center;
-  gap:10px;
-  margin:0 0 12px;
-  color:var(--brand);
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-}
-
-.page-company .company-profile .about-section-head__eyebrow::before{
-  content:"";
-  width:42px;
-  height:1px;
-  background:#004b53;
-  opacity:.5;
-}
-
-.page-company .company-profile .about-section-head h2{
-  margin:0;
-  color:#103238;
-  font-size:clamp(26px, 3vw, 38px);
-  line-height:1.25;
-}
-
-.page-company .company-table{
-  display:grid;
-  gap:18px;
-}
-
-.page-company .company-row{
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:24px;
-  align-items:stretch;
-}
-
-.page-company .company-label{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  min-height:74px;
-  background:#3f3f3f;
-  color:#fff;
-  font-weight:800;
-  letter-spacing:.06em;
-  text-align:center;
-  padding:18px 12px;
-  border-radius:12px;
-  line-height:1.2;
-}
-
-.page-company .company-value{
-  min-height:74px;
-  display:flex;
-  align-items:center;
-  font-size:18px;
-  font-weight:700;
-  color:var(--fg);
-  line-height:1.9;
-  padding:0;
-}
-
-.page-company .company-row--address{
-  align-items:stretch;
-}
-
-.page-company .company-row--address .company-label{
-  align-self:stretch;
-  min-height:0;
-  height:auto;
-  align-items:flex-start;
-  justify-content:center;
-  padding-top:26px;
-}
-
-.page-company .company-row--address .company-value{
-  display:flex;
-  flex-direction:column;
-  align-items:stretch;
-  justify-content:flex-start;
-  min-height:560px;
-  padding:0;
-}
-
-.page-company .company-address{
-  margin:0 0 14px;
-  font-weight:700;
-}
-
-.page-company .company-map{
-  flex:1;
-  min-height:0;
-  width:100%;
-  max-width:none;
-  border-radius:16px;
-  overflow:hidden;
-  box-shadow:0 10px 26px rgba(0,0,0,.10);
-  background:#f3f3f3;
-  position:relative;
-}
-
-.page-company .company-map iframe{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
-  border:0;
-  display:block;
-}
-
-.page-company .company-tel{
-  color:inherit;
-  text-decoration:none;
-  border-bottom:none;
-  padding-bottom:0;
-}
-
-@media (max-width: 1024px){
-  .page-company .company-hero__headline{
-    white-space:normal;
-  }
-}
-
-@media (max-width: 820px){
-  .page-company .company-hero{
-    padding:56px 0 44px;
-  }
-
-  .page-company .company-hero__inner,
-  .page-company .company-profile .inner{
-    width:min(100%, calc(100% - 32px));
-  }
-
-  .page-company .company-hero__headline{
-    font-size:clamp(24px, 7vw, 34px);
-    line-height:1.4;
-    white-space:normal;
-  }
-
-  .page-company .company-hero__body p{
-    font-size:15px;
-    line-height:1.95;
-    margin-bottom:18px;
-  }
-
-  .page-company .company-hero__signature{
-    font-size:15px;
-    margin-top:24px;
-  }
-
-  .page-company .company-profile{
-    padding:0 0 72px;
-  }
-
-  .page-company .company-row{
-    grid-template-columns:1fr;
-    gap:12px;
-    align-items:start;
-  }
-
-  .page-company .company-label{
-    min-height:auto;
-    padding:16px 12px;
-    border-radius:10px;
-  }
-
-  .page-company .company-value{
-    min-height:auto;
-    display:block;
-    padding:0;
-    font-size:16px;
-  }
-
-  .page-company .company-row--address .company-label{
-    align-self:auto;
-    height:auto;
-    min-height:auto;
-    padding-top:16px;
-    align-items:center;
-  }
-
-  .page-company .company-row--address .company-value{
-    min-height:auto;
-    display:block;
-  }
-
-  .page-company .company-map{
-    height:320px;
-    border-radius:14px;
-    margin-top:0;
-  }
-}
