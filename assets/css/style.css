@@ -462,14 +462,17 @@ main{
   height:320px;
   overflow:hidden;
   border:1px solid var(--border);
-  background:#f2f2f2;
+  background:#fff;
+  padding:0;
 }
 
 .page-services .feature-card__frame img{
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:center 28%;
   display:block;
+  transform:none;
 }
 
 .page-services .feature-card__label{
@@ -1716,14 +1719,17 @@ main{
   height:320px;
   overflow:hidden;
   border:1px solid var(--border);
-  background:#f2f2f2;
+  background:#fff;
+  padding-bottom:72px;
 }
 
 .page-services .feature-card__frame img{
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:center top;
   display:block;
+  transform:scale(1.1);
 }
 
 .page-services .feature-card__label{
@@ -3782,4 +3788,35 @@ main{
   .page-contact .hbspt-form input[type="submit"]{
     width:100%;
   }
+}
+
+
+/* =========================================================
+   ▼ Services page image alignment tuning
+   余白なし・見え方統一用の最終上書き
+========================================================= */
+.page-services .feature-card__frame{
+  padding:0 !important;
+  background:#fff !important;
+}
+
+.page-services .feature-card__frame img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block !important;
+  transform:none !important;
+}
+
+/* 3枚の主役位置を揃えるため、少し上寄せで個別調整 */
+.page-services .feature-card:nth-child(1) .feature-card__frame img{
+  object-position:center 24% !important;
+}
+
+.page-services .feature-card:nth-child(2) .feature-card__frame img{
+  object-position:center 22% !important;
+}
+
+.page-services .feature-card:nth-child(3) .feature-card__frame img{
+  object-position:center 24% !important;
 }
