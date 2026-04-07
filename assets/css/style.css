@@ -3820,3 +3820,25 @@ main{
 .page-services .feature-card:nth-child(3) .feature-card__frame img{
   object-position:center 24% !important;
 }
+
+/* =========================================================
+   ▼ Works page STEPバッジ調整
+   円形から「お問い合わせ」ボタン寄りの角丸形状へ変更
+========================================================= */
+.page-works .approach-card__step,
+.page-works .works-approach__step{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-width:96px;
+  height:56px;
+  padding:0 20px;
+  margin-bottom:18px;
+  border-radius:16px;
+  background:#004B53;
+  color:#fff;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.08em;
+  white-space:nowrap;
+}
